@@ -12,19 +12,24 @@ namespace Reception
 {
     public partial class frmProcessFind : Form
     {
+        public Form1 f1;
+        public Victim v;
+
         public frmProcessFind()
         {
             InitializeComponent();
         }
 
-        void set_filter()
+        void SetFilter()
         {
             Proc_F filter = new Proc_F()
             {
-
+                pattern = textBox1.Text,
+                regex = checkBox1.Checked,
+                ignore_case = checkBox2.Checked,
             };
 
-            C2.form1.proc_Filter(filter);
+            f1.proc_Filter(filter, v);
         }
 
         void setup()
@@ -34,7 +39,14 @@ namespace Reception
 
         private void frmProcessFind_Load(object sender, EventArgs e)
         {
+            setup();
+        }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            SetFilter();
+            DialogResult = DialogResult.OK;
+            ActiveForm.Close();
         }
     }
 }

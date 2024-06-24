@@ -27,9 +27,6 @@ namespace Reception
 
         void setup()
         {
-            //GUID
-            textBox4.Text = Guid.NewGuid().ToString();
-
             //SERVER
             if (C2.ini_manager.ReadIniFile("BUILDER", "dns", "0") == "1")
             {
@@ -142,7 +139,12 @@ namespace Reception
                 MessageBox.Show("Save file: " + sfd.FileName, "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
-            //WRITE DB
+            //ADD PAYLOAD
+            foreach (ListViewItem item in listView1.CheckedItems)
+            {
+                string py_file = item.Tag.ToString();
+                string _code = File.ReadAllText(py_file);
+            }
         }
 
         private void frmBuild_Load(object sender, EventArgs e)
@@ -169,11 +171,6 @@ namespace Reception
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            textBox4.Text = Guid.NewGuid().ToString();
         }
     }
 }
