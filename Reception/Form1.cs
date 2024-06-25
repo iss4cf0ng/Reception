@@ -1238,10 +1238,10 @@ namespace Reception
         }
         public void ErrorLogs(string msg)
         {
-            Invoke(new Action(() => 
-            { 
+            Invoke(new Action(() =>
+            {
                 richTextBox3.AppendText($"{C1.DateTimeStrFormat()}: {msg}\n");
-                richTextBox3.ScrollToCaret(); 
+                richTextBox3.ScrollToCaret();
             }));
         }
 
@@ -4441,7 +4441,17 @@ namespace Reception
 
         private void toolStripMenuItem102_Click(object sender, EventArgs e)
         {
+            frmConnFind f = new frmConnFind();
+            f.v = GetVictimInCurrentTab();
+            f.f1 = this;
+            f.Text = $@"Conn Filter\\{f.v.ID}";
+            f.Show();
+        }
 
+        private void toolStripMenuItem95_Click(object sender, EventArgs e)
+        {
+            frmConnect f = new frmConnect();
+            f.ShowDialog();
         }
     }
 }

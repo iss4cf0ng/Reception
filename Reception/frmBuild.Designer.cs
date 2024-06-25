@@ -50,10 +50,6 @@
             label4 = new Label();
             label3 = new Label();
             groupBox3 = new GroupBox();
-            checkBox3 = new CheckBox();
-            comboBox3 = new ComboBox();
-            button2 = new Button();
-            checkBox2 = new CheckBox();
             checkBox6 = new CheckBox();
             checkBox5 = new CheckBox();
             checkBox1 = new CheckBox();
@@ -283,57 +279,16 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(checkBox3);
-            groupBox3.Controls.Add(comboBox3);
-            groupBox3.Controls.Add(button2);
-            groupBox3.Controls.Add(checkBox2);
             groupBox3.Controls.Add(checkBox6);
             groupBox3.Controls.Add(checkBox5);
             groupBox3.Controls.Add(checkBox1);
-            groupBox3.Location = new Point(12, 299);
+            groupBox3.Location = new Point(12, 211);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(276, 88);
+            groupBox3.Size = new Size(276, 61);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "Protection";
             groupBox3.Enter += groupBox3_Enter;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(208, 26);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(50, 23);
-            checkBox3.TabIndex = 7;
-            checkBox3.Text = "Bin";
-            checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(68, 55);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(132, 27);
-            comboBox3.TabIndex = 6;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(206, 55);
-            button2.Name = "button2";
-            button2.Size = new Size(54, 27);
-            button2.TabIndex = 6;
-            button2.Text = "?";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(7, 57);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(57, 23);
-            checkBox2.TabIndex = 3;
-            checkBox2.Text = "RSA";
-            checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox6
             // 
@@ -441,8 +396,6 @@
         private Label label4;
         private GroupBox groupBox3;
         private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
         private NumericUpDown numericUpDown2;
         private Label label5;
         private RadioButton radioButton2;
@@ -456,8 +409,6 @@
         private Label label9;
         private CheckBox checkBox5;
         private CheckBox checkBox6;
-        private Button button2;
-        private ComboBox comboBox3;
         private GroupBox groupBox5;
         private ListView listView1;
         private ColumnHeader columnHeader1;

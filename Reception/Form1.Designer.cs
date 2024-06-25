@@ -30,9 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            TreeNode treeNode1 = new TreeNode("Linux");
-            TreeNode treeNode2 = new TreeNode("Windows");
-            TreeNode treeNode3 = new TreeNode("Victim", new TreeNode[] { treeNode1, treeNode2 });
+            TreeNode treeNode4 = new TreeNode("Linux");
+            TreeNode treeNode5 = new TreeNode("Windows");
+            TreeNode treeNode6 = new TreeNode("Victim", new TreeNode[] { treeNode4, treeNode5 });
             toolStrip1 = new ToolStrip();
             toolStripButton2 = new ToolStripButton();
             toolStripButton1 = new ToolStripButton();
@@ -406,16 +406,16 @@
             treeView1.ImageList = imageList2;
             treeView1.Location = new Point(0, 0);
             treeView1.Name = "treeView1";
-            treeNode1.ImageKey = "linux.png";
-            treeNode1.Name = "節點1";
-            treeNode1.Text = "Linux";
-            treeNode2.ImageKey = "windows.png";
-            treeNode2.Name = "節點2";
-            treeNode2.Text = "Windows";
-            treeNode3.ImageKey = "isign32.dll_14_ICO_APP.ico";
-            treeNode3.Name = "節點0";
-            treeNode3.Text = "Victim";
-            treeView1.Nodes.AddRange(new TreeNode[] { treeNode3 });
+            treeNode4.ImageKey = "linux.png";
+            treeNode4.Name = "節點1";
+            treeNode4.Text = "Linux";
+            treeNode5.ImageKey = "windows.png";
+            treeNode5.Name = "節點2";
+            treeNode5.Text = "Windows";
+            treeNode6.ImageKey = "isign32.dll_14_ICO_APP.ico";
+            treeNode6.Name = "節點0";
+            treeNode6.Text = "Victim";
+            treeView1.Nodes.AddRange(new TreeNode[] { treeNode6 });
             treeView1.SelectedImageIndex = 0;
             treeView1.Size = new Size(221, 420);
             treeView1.TabIndex = 1;
@@ -556,6 +556,7 @@
             toolStripMenuItem95.Name = "toolStripMenuItem95";
             toolStripMenuItem95.Size = new Size(168, 22);
             toolStripMenuItem95.Text = "Connect Server";
+            toolStripMenuItem95.Click += toolStripMenuItem95_Click;
             // 
             // toolStripSeparator21
             // 
@@ -721,9 +722,9 @@
             // tab_Info
             // 
             tab_Info.Controls.Add(listView3);
-            tab_Info.Location = new Point(4, 24);
+            tab_Info.Location = new Point(4, 28);
             tab_Info.Name = "tab_Info";
-            tab_Info.Size = new Size(856, 354);
+            tab_Info.Size = new Size(856, 350);
             tab_Info.TabIndex = 3;
             tab_Info.Text = "Details\\\\ipAddr";
             tab_Info.UseVisualStyleBackColor = true;
@@ -734,7 +735,7 @@
             listView3.Dock = DockStyle.Fill;
             listView3.Location = new Point(0, 0);
             listView3.Name = "listView3";
-            listView3.Size = new Size(856, 354);
+            listView3.Size = new Size(856, 350);
             listView3.TabIndex = 0;
             listView3.UseCompatibleStateImageBehavior = false;
             listView3.View = View.Details;
@@ -753,9 +754,9 @@
             // 
             tab_Shell.Controls.Add(textBox5);
             tab_Shell.Controls.Add(textBox1);
-            tab_Shell.Location = new Point(4, 24);
+            tab_Shell.Location = new Point(4, 28);
             tab_Shell.Name = "tab_Shell";
-            tab_Shell.Size = new Size(856, 354);
+            tab_Shell.Size = new Size(856, 350);
             tab_Shell.TabIndex = 2;
             tab_Shell.Text = "Shell\\\\ipAddr";
             tab_Shell.UseVisualStyleBackColor = true;
@@ -787,17 +788,17 @@
             tab_FileManager.Controls.Add(statusStrip2);
             tab_FileManager.Controls.Add(textBox2);
             tab_FileManager.Controls.Add(splitContainer2);
-            tab_FileManager.Location = new Point(4, 24);
+            tab_FileManager.Location = new Point(4, 28);
             tab_FileManager.Name = "tab_FileManager";
             tab_FileManager.Padding = new Padding(3);
-            tab_FileManager.Size = new Size(856, 354);
+            tab_FileManager.Size = new Size(856, 350);
             tab_FileManager.TabIndex = 1;
             tab_FileManager.Text = "FileManager\\\\ipAddr";
             tab_FileManager.UseVisualStyleBackColor = true;
             // 
             // statusStrip2
             // 
-            statusStrip2.Location = new Point(3, 329);
+            statusStrip2.Location = new Point(3, 325);
             statusStrip2.Name = "statusStrip2";
             statusStrip2.Size = new Size(850, 22);
             statusStrip2.TabIndex = 2;
@@ -828,7 +829,7 @@
             splitContainer2.Panel2.Controls.Add(listView1);
             splitContainer2.Panel2.RightToLeft = RightToLeft.No;
             splitContainer2.RightToLeft = RightToLeft.No;
-            splitContainer2.Size = new Size(850, 290);
+            splitContainer2.Size = new Size(850, 286);
             splitContainer2.SplitterDistance = 200;
             splitContainer2.TabIndex = 0;
             // 
@@ -837,7 +838,7 @@
             treeView2.Dock = DockStyle.Fill;
             treeView2.Location = new Point(0, 0);
             treeView2.Name = "treeView2";
-            treeView2.Size = new Size(200, 290);
+            treeView2.Size = new Size(200, 286);
             treeView2.TabIndex = 0;
             treeView2.AfterSelect += treeView2_AfterSelect;
             // 
@@ -847,7 +848,7 @@
             listView1.Dock = DockStyle.Fill;
             listView1.Location = new Point(0, 0);
             listView1.Name = "listView1";
-            listView1.Size = new Size(646, 290);
+            listView1.Size = new Size(646, 286);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -888,9 +889,9 @@
             tabPage5.Controls.Add(textBox4);
             tabPage5.Controls.Add(textBox3);
             tabPage5.Controls.Add(textEditorControl1);
-            tabPage5.Location = new Point(4, 24);
+            tabPage5.Location = new Point(4, 28);
             tabPage5.Name = "tabPage5";
-            tabPage5.Size = new Size(856, 354);
+            tabPage5.Size = new Size(856, 350);
             tabPage5.TabIndex = 4;
             tabPage5.Text = "ReadFile\\\\ipAddr";
             tabPage5.UseVisualStyleBackColor = true;
@@ -898,7 +899,7 @@
             // textBox4
             // 
             textBox4.Dock = DockStyle.Bottom;
-            textBox4.Location = new Point(0, 327);
+            textBox4.Location = new Point(0, 323);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(856, 27);
             textBox4.TabIndex = 5;
@@ -918,7 +919,7 @@
             textEditorControl1.Highlighting = null;
             textEditorControl1.Location = new Point(0, 33);
             textEditorControl1.Name = "textEditorControl1";
-            textEditorControl1.Size = new Size(855, 288);
+            textEditorControl1.Size = new Size(855, 284);
             textEditorControl1.TabIndex = 3;
             textEditorControl1.Text = "textEditorControl1";
             // 
@@ -1687,7 +1688,7 @@
             tabPage9.Location = new Point(4, 4);
             tabPage9.Name = "tabPage9";
             tabPage9.Padding = new Padding(3);
-            tabPage9.Size = new Size(1096, 148);
+            tabPage9.Size = new Size(1096, 152);
             tabPage9.TabIndex = 1;
             tabPage9.Text = "Transport Status";
             tabPage9.UseVisualStyleBackColor = true;
@@ -1697,7 +1698,7 @@
             richTextBox2.Dock = DockStyle.Fill;
             richTextBox2.Location = new Point(3, 3);
             richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(1090, 142);
+            richTextBox2.Size = new Size(1090, 146);
             richTextBox2.TabIndex = 0;
             richTextBox2.Text = "";
             // 
@@ -1706,7 +1707,7 @@
             tabPage10.Controls.Add(listView4);
             tabPage10.Location = new Point(4, 4);
             tabPage10.Name = "tabPage10";
-            tabPage10.Size = new Size(1096, 148);
+            tabPage10.Size = new Size(1096, 152);
             tabPage10.TabIndex = 2;
             tabPage10.Text = "KeyExchange Status";
             tabPage10.UseVisualStyleBackColor = true;
@@ -1718,7 +1719,7 @@
             listView4.FullRowSelect = true;
             listView4.Location = new Point(0, 0);
             listView4.Name = "listView4";
-            listView4.Size = new Size(1096, 148);
+            listView4.Size = new Size(1096, 152);
             listView4.TabIndex = 0;
             listView4.UseCompatibleStateImageBehavior = false;
             listView4.View = View.Details;
@@ -1748,7 +1749,7 @@
             tabPage11.Controls.Add(richTextBox3);
             tabPage11.Location = new Point(4, 4);
             tabPage11.Name = "tabPage11";
-            tabPage11.Size = new Size(1096, 148);
+            tabPage11.Size = new Size(1096, 152);
             tabPage11.TabIndex = 3;
             tabPage11.Text = "Error Logs";
             tabPage11.UseVisualStyleBackColor = true;
@@ -1758,7 +1759,7 @@
             richTextBox3.Dock = DockStyle.Fill;
             richTextBox3.Location = new Point(0, 0);
             richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(1096, 148);
+            richTextBox3.Size = new Size(1096, 152);
             richTextBox3.TabIndex = 1;
             richTextBox3.Text = "";
             // 

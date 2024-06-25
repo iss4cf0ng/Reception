@@ -31,16 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSetting));
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            textBox1 = new TextBox();
             groupBox1 = new GroupBox();
-            numericUpDown2 = new NumericUpDown();
+            numericUpDown5 = new NumericUpDown();
+            label11 = new Label();
+            numericUpDown4 = new NumericUpDown();
             label2 = new Label();
             numericUpDown1 = new NumericUpDown();
+            textBox1 = new TextBox();
+            numericUpDown2 = new NumericUpDown();
             label1 = new Label();
+            checkBox4 = new CheckBox();
+            checkBox3 = new CheckBox();
             tabPage2 = new TabPage();
-            groupBox4 = new GroupBox();
             groupBox3 = new GroupBox();
-            checkBox2 = new CheckBox();
             button1 = new Button();
             checkBox1 = new CheckBox();
             textBox3 = new TextBox();
@@ -48,8 +51,6 @@
             groupBox2 = new GroupBox();
             numericUpDown3 = new NumericUpDown();
             label5 = new Label();
-            label3 = new Label();
-            textBox2 = new TextBox();
             tabPage3 = new TabPage();
             groupBox7 = new GroupBox();
             textBox8 = new TextBox();
@@ -69,8 +70,10 @@
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             tabPage2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox2.SuspendLayout();
@@ -92,122 +95,152 @@
             tabControl1.Margin = new Padding(4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(657, 366);
+            tabControl1.Size = new Size(657, 367);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(textBox1);
             tabPage1.Controls.Add(groupBox1);
             tabPage1.Location = new Point(4, 28);
             tabPage1.Margin = new Padding(4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(4);
-            tabPage1.Size = new Size(649, 334);
+            tabPage1.Size = new Size(649, 335);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Server";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(189, 205);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(100, 27);
-            textBox1.TabIndex = 0;
-            // 
             // groupBox1
             // 
-            groupBox1.Controls.Add(numericUpDown2);
+            groupBox1.Controls.Add(numericUpDown5);
+            groupBox1.Controls.Add(label11);
+            groupBox1.Controls.Add(numericUpDown4);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(numericUpDown1);
+            groupBox1.Controls.Add(textBox1);
+            groupBox1.Controls.Add(numericUpDown2);
             groupBox1.Controls.Add(label1);
+            groupBox1.Controls.Add(checkBox4);
+            groupBox1.Controls.Add(checkBox3);
             groupBox1.Location = new Point(8, 7);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(333, 133);
+            groupBox1.Size = new Size(272, 193);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
             groupBox1.Text = "Server";
             // 
-            // numericUpDown2
+            // numericUpDown5
             // 
-            numericUpDown2.Location = new Point(122, 61);
-            numericUpDown2.Margin = new Padding(17, 16, 17, 16);
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(136, 27);
-            numericUpDown2.TabIndex = 3;
+            numericUpDown5.Location = new Point(65, 53);
+            numericUpDown5.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
+            numericUpDown5.Name = "numericUpDown5";
+            numericUpDown5.Size = new Size(192, 27);
+            numericUpDown5.TabIndex = 5;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(14, 57);
+            label11.Name = "label11";
+            label11.Size = new Size(45, 19);
+            label11.TabIndex = 6;
+            label11.Text = "Port :";
+            // 
+            // numericUpDown4
+            // 
+            numericUpDown4.Location = new Point(148, 153);
+            numericUpDown4.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            numericUpDown4.Name = "numericUpDown4";
+            numericUpDown4.Size = new Size(109, 27);
+            numericUpDown4.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(15, 63);
+            label2.Location = new Point(30, 23);
             label2.Name = "label2";
-            label2.Size = new Size(97, 19);
+            label2.Size = new Size(29, 19);
             label2.TabIndex = 2;
-            label2.Text = "Header size :";
+            label2.Text = "IP :";
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(122, 21);
+            numericUpDown1.Location = new Point(121, 87);
             numericUpDown1.Margin = new Padding(13);
+            numericUpDown1.Maximum = new decimal(new int[] { 10000, 0, 0, 0 });
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(136, 27);
             numericUpDown1.TabIndex = 1;
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(65, 20);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(192, 27);
+            textBox1.TabIndex = 0;
+            // 
+            // numericUpDown2
+            // 
+            numericUpDown2.Location = new Point(148, 120);
+            numericUpDown2.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            numericUpDown2.Name = "numericUpDown2";
+            numericUpDown2.Size = new Size(109, 27);
+            numericUpDown2.TabIndex = 4;
+            // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 23);
+            label1.Location = new Point(14, 89);
             label1.Name = "label1";
             label1.Size = new Size(97, 19);
             label1.TabIndex = 0;
             label1.Text = "Socket limit :";
             // 
+            // checkBox4
+            // 
+            checkBox4.AutoSize = true;
+            checkBox4.Location = new Point(14, 154);
+            checkBox4.Name = "checkBox4";
+            checkBox4.Size = new Size(125, 23);
+            checkBox4.TabIndex = 3;
+            checkBox4.Text = "RecvTimeout :";
+            checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Location = new Point(14, 121);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(128, 23);
+            checkBox3.TabIndex = 2;
+            checkBox3.Text = "SendTimeout :";
+            checkBox3.UseVisualStyleBackColor = true;
+            // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(groupBox4);
             tabPage2.Controls.Add(groupBox3);
             tabPage2.Controls.Add(groupBox2);
             tabPage2.Location = new Point(4, 24);
             tabPage2.Margin = new Padding(4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(4);
-            tabPage2.Size = new Size(649, 338);
+            tabPage2.Size = new Size(649, 339);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Manager";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
-            // 
-            groupBox4.Location = new Point(8, 221);
-            groupBox4.Name = "groupBox4";
-            groupBox4.Size = new Size(421, 100);
-            groupBox4.TabIndex = 4;
-            groupBox4.TabStop = false;
-            groupBox4.Text = "Service";
-            // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(checkBox2);
             groupBox3.Controls.Add(button1);
             groupBox3.Controls.Add(checkBox1);
             groupBox3.Controls.Add(textBox3);
             groupBox3.Controls.Add(label4);
-            groupBox3.Location = new Point(8, 115);
+            groupBox3.Location = new Point(7, 78);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(421, 100);
+            groupBox3.Size = new Size(421, 95);
             groupBox3.TabIndex = 3;
             groupBox3.TabStop = false;
-            groupBox3.Text = "Process";
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(147, 27);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(85, 23);
-            checkBox2.TabIndex = 5;
-            checkBox2.Text = "Scan AV";
-            checkBox2.UseVisualStyleBackColor = true;
+            groupBox3.Text = "Process/Service";
             // 
             // button1
             // 
@@ -248,56 +281,38 @@
             // 
             groupBox2.Controls.Add(numericUpDown3);
             groupBox2.Controls.Add(label5);
-            groupBox2.Controls.Add(label3);
-            groupBox2.Controls.Add(textBox2);
             groupBox2.Location = new Point(8, 9);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(421, 100);
+            groupBox2.Size = new Size(279, 63);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "File";
             // 
             // numericUpDown3
             // 
-            numericUpDown3.Location = new Point(132, 64);
+            numericUpDown3.Location = new Point(85, 21);
             numericUpDown3.Margin = new Padding(6);
             numericUpDown3.Name = "numericUpDown3";
-            numericUpDown3.Size = new Size(179, 27);
+            numericUpDown3.Size = new Size(132, 27);
             numericUpDown3.TabIndex = 3;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(6, 64);
+            label5.Location = new Point(11, 23);
             label5.Name = "label5";
             label5.Size = new Size(65, 19);
             label5.TabIndex = 2;
             label5.Text = "Thread :";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(6, 23);
-            label3.Name = "label3";
-            label3.Size = new Size(114, 19);
-            label3.TabIndex = 0;
-            label3.Text = "Img extension :";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(126, 20);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(289, 27);
-            textBox2.TabIndex = 1;
             // 
             // tabPage3
             // 
             tabPage3.Controls.Add(groupBox7);
             tabPage3.Controls.Add(groupBox6);
             tabPage3.Controls.Add(groupBox5);
-            tabPage3.Location = new Point(4, 24);
+            tabPage3.Location = new Point(4, 28);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(649, 338);
+            tabPage3.Size = new Size(649, 335);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Shell";
             tabPage3.UseVisualStyleBackColor = true;
@@ -436,6 +451,7 @@
             toolStripButton1.Name = "toolStripButton1";
             toolStripButton1.Size = new Size(62, 23);
             toolStripButton1.Text = "Save";
+            toolStripButton1.Click += toolStripButton1_Click;
             // 
             // frmSetting
             // 
@@ -455,11 +471,12 @@
             Load += frmSetting_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
             tabPage2.ResumeLayout(false);
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
@@ -488,21 +505,15 @@
         private NumericUpDown numericUpDown1;
         private Label label1;
         private TabPage tabPage2;
-        private NumericUpDown numericUpDown2;
-        private Label label2;
         private GroupBox groupBox3;
         private Button button1;
         private CheckBox checkBox1;
         private TextBox textBox3;
         private Label label4;
         private GroupBox groupBox2;
-        private Label label3;
-        private TextBox textBox2;
-        private CheckBox checkBox2;
         private ToolStrip toolStrip1;
         private NumericUpDown numericUpDown3;
         private Label label5;
-        private GroupBox groupBox4;
         private ToolStripButton toolStripButton1;
         private TabPage tabPage3;
         private GroupBox groupBox6;
@@ -518,5 +529,12 @@
         private GroupBox groupBox7;
         private TextBox textBox8;
         private Label label10;
+        private NumericUpDown numericUpDown4;
+        private NumericUpDown numericUpDown2;
+        private CheckBox checkBox4;
+        private CheckBox checkBox3;
+        private Label label2;
+        private NumericUpDown numericUpDown5;
+        private Label label11;
     }
 }
