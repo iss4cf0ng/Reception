@@ -13,9 +13,3 @@ No release currently.
 Client用RSA public key加密AES key傳回Server然後用private key解密，之後Server和Client用AES CBC通訊。
 2. Server會把Python的payload加密後傳到Client，Client解密後用exec()函數執行惡意Payload，把結果加密後傳回Server。
 3. Server可以把預先做好的第三方庫的zip檔加密後傳到Client，Client解密後會把zip解壓在某個temporary folder，再由temporary folder import，這樣一樣就算Client沒有該Libaray，也可以在Client安裝
-
-# Run backdoor
-```
-Windows:
-python zombie.py debug
-```
