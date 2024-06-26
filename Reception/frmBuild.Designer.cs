@@ -43,21 +43,13 @@
             label1 = new Label();
             button1 = new Button();
             groupBox2 = new GroupBox();
-            numericUpDown4 = new NumericUpDown();
-            label8 = new Label();
             comboBox2 = new ComboBox();
             label7 = new Label();
-            label6 = new Label();
-            comboBox1 = new ComboBox();
             textBox3 = new TextBox();
             textBox2 = new TextBox();
             label4 = new Label();
             label3 = new Label();
             groupBox3 = new GroupBox();
-            checkBox3 = new CheckBox();
-            comboBox3 = new ComboBox();
-            button2 = new Button();
-            checkBox2 = new CheckBox();
             checkBox6 = new CheckBox();
             checkBox5 = new CheckBox();
             checkBox1 = new CheckBox();
@@ -65,17 +57,19 @@
             listView1 = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
-            label11 = new Label();
+            groupBox4 = new GroupBox();
+            checkBox3 = new CheckBox();
+            checkBox2 = new CheckBox();
             textBox4 = new TextBox();
-            button3 = new Button();
+            label6 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).BeginInit();
             groupBox3.SuspendLayout();
             groupBox5.SuspendLayout();
+            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -92,7 +86,7 @@
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(textBox1);
             groupBox1.Controls.Add(label1);
-            groupBox1.Location = new Point(12, 97);
+            groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(276, 193);
             groupBox1.TabIndex = 0;
@@ -224,46 +218,24 @@
             // 
             // groupBox2
             // 
-            groupBox2.Controls.Add(numericUpDown4);
-            groupBox2.Controls.Add(label8);
             groupBox2.Controls.Add(comboBox2);
             groupBox2.Controls.Add(label7);
-            groupBox2.Controls.Add(label6);
-            groupBox2.Controls.Add(comboBox1);
             groupBox2.Controls.Add(textBox3);
             groupBox2.Controls.Add(textBox2);
             groupBox2.Controls.Add(label4);
             groupBox2.Controls.Add(label3);
             groupBox2.Location = new Point(294, 12);
             groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(316, 193);
+            groupBox2.Size = new Size(316, 124);
             groupBox2.TabIndex = 2;
             groupBox2.TabStop = false;
             groupBox2.Text = "Key Exchange";
-            // 
-            // numericUpDown4
-            // 
-            numericUpDown4.Location = new Point(112, 154);
-            numericUpDown4.Maximum = new decimal(new int[] { 65535, 0, 0, 0 });
-            numericUpDown4.Name = "numericUpDown4";
-            numericUpDown4.Size = new Size(198, 27);
-            numericUpDown4.TabIndex = 12;
-            numericUpDown4.Value = new decimal(new int[] { 2048, 0, 0, 0 });
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(6, 156);
-            label8.Name = "label8";
-            label8.Size = new Size(102, 19);
-            label8.TabIndex = 10;
-            label8.Text = "RSA KeySize :";
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "128", "192", "256" });
-            comboBox2.Location = new Point(112, 118);
+            comboBox2.Location = new Point(112, 88);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(198, 27);
             comboBox2.TabIndex = 9;
@@ -271,29 +243,11 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(6, 121);
+            label7.Location = new Point(6, 91);
             label7.Name = "label7";
             label7.Size = new Size(100, 19);
             label7.TabIndex = 8;
             label7.Text = "AES KeySize :";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(6, 88);
-            label6.Name = "label6";
-            label6.Size = new Size(63, 19);
-            label6.TabIndex = 7;
-            label6.Text = "Crypto :";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "AES-CBC" });
-            comboBox1.Location = new Point(75, 85);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(235, 27);
-            comboBox1.TabIndex = 6;
             // 
             // textBox3
             // 
@@ -331,57 +285,16 @@
             // 
             // groupBox3
             // 
-            groupBox3.Controls.Add(checkBox3);
-            groupBox3.Controls.Add(comboBox3);
-            groupBox3.Controls.Add(button2);
-            groupBox3.Controls.Add(checkBox2);
             groupBox3.Controls.Add(checkBox6);
             groupBox3.Controls.Add(checkBox5);
             groupBox3.Controls.Add(checkBox1);
-            groupBox3.Location = new Point(12, 299);
+            groupBox3.Location = new Point(12, 211);
             groupBox3.Name = "groupBox3";
-            groupBox3.Size = new Size(276, 88);
+            groupBox3.Size = new Size(276, 61);
             groupBox3.TabIndex = 5;
             groupBox3.TabStop = false;
             groupBox3.Text = "Protection";
             groupBox3.Enter += groupBox3_Enter;
-            // 
-            // checkBox3
-            // 
-            checkBox3.AutoSize = true;
-            checkBox3.Location = new Point(208, 26);
-            checkBox3.Name = "checkBox3";
-            checkBox3.Size = new Size(50, 23);
-            checkBox3.TabIndex = 7;
-            checkBox3.Text = "Bin";
-            checkBox3.UseVisualStyleBackColor = true;
-            // 
-            // comboBox3
-            // 
-            comboBox3.FormattingEnabled = true;
-            comboBox3.Location = new Point(68, 55);
-            comboBox3.Name = "comboBox3";
-            comboBox3.Size = new Size(132, 27);
-            comboBox3.TabIndex = 6;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(206, 55);
-            button2.Name = "button2";
-            button2.Size = new Size(54, 27);
-            button2.TabIndex = 6;
-            button2.Text = "?";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(7, 57);
-            checkBox2.Name = "checkBox2";
-            checkBox2.Size = new Size(57, 23);
-            checkBox2.TabIndex = 3;
-            checkBox2.Text = "RSA";
-            checkBox2.UseVisualStyleBackColor = true;
             // 
             // checkBox6
             // 
@@ -416,19 +329,21 @@
             // groupBox5
             // 
             groupBox5.Controls.Add(listView1);
-            groupBox5.Location = new Point(294, 211);
+            groupBox5.Location = new Point(294, 142);
             groupBox5.Name = "groupBox5";
-            groupBox5.Size = new Size(316, 131);
+            groupBox5.Size = new Size(316, 200);
             groupBox5.TabIndex = 6;
             groupBox5.TabStop = false;
             groupBox5.Text = "Payload";
             // 
             // listView1
             // 
+            listView1.CheckBoxes = true;
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            listView1.FullRowSelect = true;
             listView1.Location = new Point(6, 26);
             listView1.Name = "listView1";
-            listView1.Size = new Size(304, 99);
+            listView1.Size = new Size(304, 168);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -443,42 +358,66 @@
             columnHeader2.Text = "Version";
             columnHeader2.Width = 150;
             // 
-            // label11
+            // groupBox4
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(12, 13);
-            label11.Name = "label11";
-            label11.Size = new Size(123, 19);
-            label11.TabIndex = 7;
-            label11.Text = "Backdoor UUID :";
+            groupBox4.Controls.Add(checkBox3);
+            groupBox4.Controls.Add(checkBox2);
+            groupBox4.Controls.Add(textBox4);
+            groupBox4.Controls.Add(label6);
+            groupBox4.Location = new Point(12, 278);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(276, 109);
+            groupBox4.TabIndex = 7;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Logs";
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Checked = true;
+            checkBox3.CheckState = CheckState.Checked;
+            checkBox3.Location = new Point(91, 70);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(140, 23);
+            checkBox3.TabIndex = 3;
+            checkBox3.Text = "Temp folder/file";
+            checkBox3.UseVisualStyleBackColor = true;
+            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(7, 70);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(74, 23);
+            checkBox2.TabIndex = 2;
+            checkBox2.Text = "Enable";
+            checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(12, 41);
-            textBox4.Multiline = true;
+            textBox4.Location = new Point(53, 37);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(276, 48);
-            textBox4.TabIndex = 8;
-            textBox4.TextChanged += textBox4_TextChanged;
+            textBox4.Size = new Size(217, 27);
+            textBox4.TabIndex = 1;
             // 
-            // button3
+            // label6
             // 
-            button3.Location = new Point(141, 9);
-            button3.Name = "button3";
-            button3.Size = new Size(147, 26);
-            button3.TabIndex = 13;
-            button3.Text = "Refresh";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            label6.AutoSize = true;
+            label6.Location = new Point(7, 39);
+            label6.Name = "label6";
+            label6.Size = new Size(40, 19);
+            label6.TabIndex = 0;
+            label6.Text = "File :";
+            label6.Click += label6_Click;
             // 
             // frmBuild
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(622, 399);
-            Controls.Add(button3);
-            Controls.Add(textBox4);
-            Controls.Add(label11);
+            Controls.Add(groupBox4);
             Controls.Add(groupBox5);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -498,12 +437,12 @@
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             groupBox2.ResumeLayout(false);
             groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown4).EndInit();
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox5.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -520,33 +459,27 @@
         private Label label4;
         private GroupBox groupBox3;
         private CheckBox checkBox1;
-        private CheckBox checkBox2;
-        private CheckBox checkBox3;
         private NumericUpDown numericUpDown2;
         private Label label5;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
         private TextBox textBox3;
         private Label label7;
-        private Label label6;
-        private ComboBox comboBox1;
         private ComboBox comboBox2;
-        private Label label8;
         private CheckBox checkBox4;
         private Label label10;
         private NumericUpDown numericUpDown3;
         private Label label9;
-        private NumericUpDown numericUpDown4;
         private CheckBox checkBox5;
         private CheckBox checkBox6;
-        private Button button2;
-        private ComboBox comboBox3;
         private GroupBox groupBox5;
         private ListView listView1;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
-        private Label label11;
+        private GroupBox groupBox4;
+        private Label label6;
+        private CheckBox checkBox3;
+        private CheckBox checkBox2;
         private TextBox textBox4;
-        private Button button3;
     }
 }

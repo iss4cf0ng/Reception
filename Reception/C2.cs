@@ -3,7 +3,10 @@
 public class C2
 {
     //CONFIG
-    public static IniManager ini_manager = new IniManager("config.ini");
+    public static IniManager ini_manager = new IniManager(Path.Combine(new string[] { Application.StartupPath, "config.ini" }));
+
+
+
 
     //STORAGE
     public static Form1 form1;
