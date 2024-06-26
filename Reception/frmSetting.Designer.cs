@@ -95,7 +95,7 @@
             tabControl1.Margin = new Padding(4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(657, 367);
+            tabControl1.Size = new Size(468, 367);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -105,7 +105,7 @@
             tabPage1.Margin = new Padding(4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(4);
-            tabPage1.Size = new Size(649, 335);
+            tabPage1.Size = new Size(460, 335);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Server";
             tabPage1.UseVisualStyleBackColor = true;
@@ -127,7 +127,7 @@
             groupBox1.Size = new Size(272, 193);
             groupBox1.TabIndex = 1;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Server";
+            groupBox1.Text = "Listener";
             // 
             // numericUpDown5
             // 
@@ -220,11 +220,11 @@
             // 
             tabPage2.Controls.Add(groupBox3);
             tabPage2.Controls.Add(groupBox2);
-            tabPage2.Location = new Point(4, 24);
+            tabPage2.Location = new Point(4, 28);
             tabPage2.Margin = new Padding(4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(4);
-            tabPage2.Size = new Size(649, 339);
+            tabPage2.Size = new Size(460, 335);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Manager";
             tabPage2.UseVisualStyleBackColor = true;
@@ -312,7 +312,7 @@
             tabPage3.Controls.Add(groupBox5);
             tabPage3.Location = new Point(4, 28);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(649, 335);
+            tabPage3.Size = new Size(460, 335);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Shell";
             tabPage3.UseVisualStyleBackColor = true;
@@ -439,7 +439,7 @@
             toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1 });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(657, 26);
+            toolStrip1.Size = new Size(468, 26);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -457,7 +457,7 @@
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(657, 396);
+            ClientSize = new Size(468, 396);
             Controls.Add(toolStrip1);
             Controls.Add(tabControl1);
             Font = new Font("Microsoft JhengHei UI", 11.25F, FontStyle.Regular, GraphicsUnit.Point);

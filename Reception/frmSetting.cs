@@ -26,6 +26,7 @@ namespace Reception
 
         void setup()
         {
+            MessageBox.Show(ini.ReadIniFile("DEFAULT", "db", "aaa"));
             //SERVER
             textBox1.Text = ini.ReadIniFile("SERVER", "ip", "127.0.0.1");
             numericUpDown5.Value = int.Parse(ini.ReadIniFile("SERVER", "port", "4444"));

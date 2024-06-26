@@ -57,6 +57,11 @@
             listView1 = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
+            groupBox4 = new GroupBox();
+            checkBox3 = new CheckBox();
+            checkBox2 = new CheckBox();
+            textBox4 = new TextBox();
+            label6 = new Label();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDown3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
@@ -64,6 +69,7 @@
             groupBox2.SuspendLayout();
             groupBox3.SuspendLayout();
             groupBox5.SuspendLayout();
+            groupBox4.SuspendLayout();
             SuspendLayout();
             // 
             // groupBox1
@@ -352,11 +358,66 @@
             columnHeader2.Text = "Version";
             columnHeader2.Width = 150;
             // 
+            // groupBox4
+            // 
+            groupBox4.Controls.Add(checkBox3);
+            groupBox4.Controls.Add(checkBox2);
+            groupBox4.Controls.Add(textBox4);
+            groupBox4.Controls.Add(label6);
+            groupBox4.Location = new Point(12, 278);
+            groupBox4.Name = "groupBox4";
+            groupBox4.Size = new Size(276, 109);
+            groupBox4.TabIndex = 7;
+            groupBox4.TabStop = false;
+            groupBox4.Text = "Logs";
+            // 
+            // checkBox3
+            // 
+            checkBox3.AutoSize = true;
+            checkBox3.Checked = true;
+            checkBox3.CheckState = CheckState.Checked;
+            checkBox3.Location = new Point(91, 70);
+            checkBox3.Name = "checkBox3";
+            checkBox3.Size = new Size(140, 23);
+            checkBox3.TabIndex = 3;
+            checkBox3.Text = "Temp folder/file";
+            checkBox3.UseVisualStyleBackColor = true;
+            checkBox3.CheckedChanged += checkBox3_CheckedChanged;
+            // 
+            // checkBox2
+            // 
+            checkBox2.AutoSize = true;
+            checkBox2.Location = new Point(7, 70);
+            checkBox2.Name = "checkBox2";
+            checkBox2.Size = new Size(74, 23);
+            checkBox2.TabIndex = 2;
+            checkBox2.Text = "Enable";
+            checkBox2.UseVisualStyleBackColor = true;
+            checkBox2.CheckedChanged += checkBox2_CheckedChanged;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(53, 37);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(217, 27);
+            textBox4.TabIndex = 1;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(7, 39);
+            label6.Name = "label6";
+            label6.Size = new Size(40, 19);
+            label6.TabIndex = 0;
+            label6.Text = "File :";
+            label6.Click += label6_Click;
+            // 
             // frmBuild
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(622, 399);
+            Controls.Add(groupBox4);
             Controls.Add(groupBox5);
             Controls.Add(groupBox3);
             Controls.Add(groupBox2);
@@ -379,6 +440,8 @@
             groupBox3.ResumeLayout(false);
             groupBox3.PerformLayout();
             groupBox5.ResumeLayout(false);
+            groupBox4.ResumeLayout(false);
+            groupBox4.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -413,5 +476,10 @@
         private ListView listView1;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
+        private GroupBox groupBox4;
+        private Label label6;
+        private CheckBox checkBox3;
+        private CheckBox checkBox2;
+        private TextBox textBox4;
     }
 }
