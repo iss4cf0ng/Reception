@@ -2,6 +2,11 @@
 
 Still writing...
 
+# How to use
+```
+$ python3 zombie.py debug
+```
+
 todo:
 - Client info
   - Windows
