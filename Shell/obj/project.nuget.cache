@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "sC/G35dO2io=",
+  "success": true,
+  "projectFilePath": "D:\\repos\\Reception\\Shell\\Shell.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\user\\.nuget\\packages\\nstack.core\\1.1.1\\nstack.core.1.1.1.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.codedom\\8.0.0\\system.codedom.8.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.management\\8.0.0\\system.management.8.0.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\user\\.nuget\\packages\\terminal.gui\\1.16.0\\terminal.gui.1.16.0.nupkg.sha512"
+  ],
+  "logs": []
+}

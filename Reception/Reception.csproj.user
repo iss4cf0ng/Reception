@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmBuild.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmConnect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmConnectedSession.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmConnFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmFileChangeDate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmFileFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmFileImage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmFileNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmFileTransferStatus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmListen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmPCControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmPipFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmProcessFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmRegAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmRegEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmRegEditBinary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmRegExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmRPluginUpload.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmScanRequired.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmServFind.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="frmWGET.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

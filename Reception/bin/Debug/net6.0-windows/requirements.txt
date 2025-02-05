@@ -1,0 +1,8 @@
+cryptography==41.0.3
+impacket==0.11.0
+opencv_python_headless==4.9.0.80
+psutil==5.8.0
+pycryptodome==3.18.0
+pyscreenshot==3.1
+pywin32==306
+scapy==2.5.0
